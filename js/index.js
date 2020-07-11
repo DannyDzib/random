@@ -5,7 +5,9 @@ const list = document.querySelector("#list");
 const insert = document.querySelector("#insert");
 // randonm Button HTMLDOM
 const random = document.querySelector("#random");
-// data Error HTML DOM
+// clear Button
+const clear = document.querySelector("#clear");
+// data Error HTMLDOM
 const dataError = document.querySelector("#dataError").style;
 // result Error HTMLDOM
 const resultError = document.querySelector("#resultError").style;
@@ -21,21 +23,21 @@ list.innerHTML = `<li class="list-group-item">Vacia</li>`;
 insert.addEventListener("click", (e) => {
   e.preventDefault();
   // name Data HTML DOM
-  const nameData = document.querySelector("#data").value;
-  if (nameData.length !== 0) {
-    data.push(nameData);
+  const nameData = document.querySelector("#data");
+  if (nameData.value.length !== 0) {
+    data.push(nameData.value);
+    nameData.value = "";
     dataError.display = "none";
     list.innerHTML = "";
+    data.forEach((data) => {
+      let li = document.createElement("LI");
+      li.classList.add("list-group-item");
+      li.innerHTML += data;
+      list.appendChild(li);
+    });
   } else {
     dataError.display = "block";
   }
-
-  data.forEach((data) => {
-    let li = document.createElement("LI");
-    li.classList.add("list-group-item");
-    li.innerHTML += data;
-    list.appendChild(li);
-  });
 });
 
 // funtion random
@@ -48,4 +50,14 @@ random.addEventListener("click", (e) => {
   } else {
     resultError.display = "block";
   }
+  setTimeout(() => {
+    result.value = "";
+  }, 5000);
+});
+
+// function Clear list
+clear.addEventListener("click", (e) => {
+  e.preventDefault();
+  data = [];
+  list.innerHTML = `<li class="list-group-item">Vacia</li>`;
 });

@@ -9,7 +9,7 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
-    <title>Document</title>
+    <title>Randon</title>
   </head>
   <body>
     <header class="container col-12">
@@ -31,19 +31,34 @@
             placeholder="ingrese un valor"
             aria-describedby="dataText"
           />
-          <small id="dataError" class="form-text text-muted">El campo no puede estar vacio</small>
+          <small id="dataError" class="form-text text-muted"
+            >El campo no puede estar vacio</small
+          >
         </div>
         <div class="form-group">
           <label for="result">Resutado</label>
-            <input type="text" class="form-control" id="result"  placeholder="resultado del sorteo" disabled />
-          <small id="resultError" class="form-text text-muted">La lista esta vacia</small>
+          <input
+            type="text"
+            class="form-control"
+            id="result"
+            placeholder="resultado del sorteo"
+            disabled
+          />
+          <small id="resultError" class="form-text text-muted"
+            >La lista esta vacia</small
+          >
         </div>
-        <button type="submit" class="btn btn-light" id="insert">
-          Insertar
-        </button>
-        <button type="submit" class="btn btn-info" id="random">
-          Sorteo
-        </button>
+        <div class="form-group container ">
+          <button type="submit" class="btn btn-light btn-sm col-sm-3 mt-2" id="insert">
+            Insertar
+          </button>
+          <button type="submit" class="btn btn-info btn-sm col-sm-4 mt-2" id="random">
+            Sorteo
+          </button>
+          <button type="submit" class="btn btn-dark btn-sm col-sm-4 mt-2" id="clear">
+            Limpiar Lista
+          </button>
+        </div>
       </form>
     </header>
     <script
