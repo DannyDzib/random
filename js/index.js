@@ -13,11 +13,12 @@ const dataError = document.querySelector("#dataError").style;
 const resultError = document.querySelector("#resultError").style;
 
 let data = [];
+const emptyList = `<li class="list-group-item">Vacia</li>`;
 
 dataError.display = "none";
 resultError.display = "none";
 
-list.innerHTML = `<li class="list-group-item">Vacia</li>`;
+list.innerHTML = emptyList;
 
 //function insert
 insert.addEventListener("click", (e) => {
@@ -59,5 +60,5 @@ random.addEventListener("click", (e) => {
 clear.addEventListener("click", (e) => {
   e.preventDefault();
   data = [];
-  list.innerHTML = `<li class="list-group-item">Vacia</li>`;
+  list.innerHTML = emptyList;
 });
